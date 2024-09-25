@@ -5,7 +5,7 @@ import './App.css'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Astronaut from './components/astronaut.jsx';
+// import Astronaut from './components/astronaut.jsx';
 import Icons from './components/icons';
 import About from './components/about';
 import Technologies from './components/technologies';
@@ -41,7 +41,7 @@ function App() {
     <>
       <div>
 
-        <Astronaut />
+        {/* <Astronaut /> */}
 
 
         <nav className='top-0 left-0 flex justify-between items-center p-4 text-white'>
