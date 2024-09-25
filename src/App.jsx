@@ -4,7 +4,7 @@ import './App.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane, faBars } from '@fortawesome/free-solid-svg-icons';
 import Astronaut from './components/Astronaut.jsx';
 import About from './components/About';
 import Technologies from './components/Technologies';
@@ -23,6 +23,7 @@ import gitIcon from '/icons/git.png';
 import reactIcon from '/icons/react.png';
 
 function App() {
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     AOS.init({});
@@ -32,6 +33,10 @@ function App() {
   const backEndIcons = [laravelIcon, mysqlIcon, phpIcon, postgresqlIcon];
   const toolIcons = [gitIcon];
   const learningIcons = [reactIcon];
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
 
   return (
     <>
@@ -43,14 +48,20 @@ function App() {
             {/* Logo o título */}
           </div>
 
-          <div className='flex flex-wrap justify-around items-center gap-5 animate__animated animate__bounceInDown text-xl'>
+          <div className='md:hidden mb-2'>
+            <button onClick={toggleMenu} className='buttonM'>
+              <FontAwesomeIcon icon={faBars} className='p-1'/>
+            </button>
+          </div>
+
+          <div className={`flex flex-wrap justify-around items-center gap-5 animate__animated animate__fadeIn text-xl ${showMenu ? 'block' : 'hidden'} md:flex`}>
             <a href="#sobre-mi" className='buttonM'>Sobre mi</a>
             <a href="#mi-trabajo" className='buttonM'>Mi trabajo</a>
             <a href="#contactame" className='buttonM'>Contactame</a>
           </div>
         </nav>
 
-        <header className='z-50'>
+        <header className='z-50 -mt-14'>
           <About />
         </header>
 
