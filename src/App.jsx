@@ -6,7 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Astronaut from './components/Astronaut.jsx';
-import Icons from './components/Icons';
+// import Icons from './components/Icons';
 import About from './components/About';
 import Technologies from './components/Technologies';
 import { motion } from "framer-motion";
