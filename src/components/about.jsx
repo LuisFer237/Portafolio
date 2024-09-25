@@ -19,7 +19,7 @@ const About = () => {
           className='mb-5 rounded-full h-64 w-64 object-cover p-1 border-4 border-gray-300 animate__animated animate__fadeIn animate__fast'
           alt='profile-photo'
         />
-        <h1 className='text-4xl font-semibold animate__animated animate__fadeIn animate__slower'>
+        <h1 className='text-4xl font-semibold animate__animated animate__fadeIn animate__slower text-center'>
           Luis Fernando Leal Contreras
         </h1>
         <p className='text-lg font-light animate__animated animate__fadeIn animate__slower'>
