@@ -4,12 +4,12 @@ import './App.css'
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Astronaut from './components/astronaut';
-import Icons from './components/icons'
-import About from './components/about'
-import Technologies from './components/technologies'
-import { motion } from "framer-motion"
+import Icons from './components/icons';
+import About from './components/about';
+import Technologies from './components/technologies';
+import { motion } from "framer-motion";
 
 import tailwindIcon from '/icons/tailwind.png';
 import cssIcon from '/icons/css.png';

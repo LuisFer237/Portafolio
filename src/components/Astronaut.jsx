@@ -44,4 +44,4 @@ const Astronaut = () => {
     );
 }
 
-export default astronaut;
+export default Astronaut;
