@@ -5,10 +5,10 @@ import './App.css'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import Astronaut from './components/astronaut.jsx';
-import Icons from './components/icons';
-import About from './components/about';
-import Technologies from './components/technologies';
+import Astronaut from './components/Astronaut.jsx';
+import Icons from './components/Icons';
+import About from './components/About';
+import Technologies from './components/Technologies';
 import { motion } from "framer-motion";
 
 import tailwindIcon from '/icons/tailwind.png';
@@ -41,7 +41,7 @@ function App() {
     <>
       <div>
 
-        {/* <Astronaut /> */}
+        <Astronaut />
 
 
         <nav className='top-0 left-0 flex justify-between items-center p-4 text-white'>
