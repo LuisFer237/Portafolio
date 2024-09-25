@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import profilephoto from '/foto.jpg';
 import githubIcon from '/icons/github.png';
