@@ -22,4 +22,4 @@ const Technologies = ({ title, icons }) => {
     );
 }
 
-export default Technologies;
+export default technologies;
