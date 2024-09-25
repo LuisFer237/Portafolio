@@ -5,7 +5,7 @@ import './App.css'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Astronaut from './components/astronaut';
+import Astronaut from './components/astronaut.jsx';
 import Icons from './components/icons';
 import About from './components/about';
 import Technologies from './components/technologies';
