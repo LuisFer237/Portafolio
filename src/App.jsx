@@ -58,7 +58,7 @@ function App() {
       <div className="relative min-h-screen">
         <div className="absolute inset-0 -z-10 min-h-screen w-full items-center px-5 py-24 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
         {/* <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> */}
-        <nav className="fixed top-0 left-0 flex flex-wrap justify-between items-center p-4 text-white w-full z-50 backdrop-blur-sm">
+        <nav className="fixed top-0 left-0 flex flex-wrap justify-between items-center p-4 text-white w-full z-50">
           <div className="flex gap-3 justify-center items-center">{/* Logo o título */}
             <img src={minecraftHeart} alt="" className="size-5" />
             <p className="text-2xl font-semibold">LFLC</p>
