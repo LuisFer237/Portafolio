@@ -5,10 +5,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane, faBars } from "@fortawesome/free-solid-svg-icons";
-import Astronaut from "./components/Astronaut.jsx";
 import About from "./components/About";
 import Technologies from "./components/Technologies";
-import { motion } from "framer-motion";
+import Projects from "./components/Projects";
 
 import tailwindIcon from "/icons/tailwind.png";
 import cssIcon from "/icons/css.png";
@@ -21,7 +20,7 @@ import livewireIcon from "/icons/livewire.png";
 import htmlIcon from "/icons/html.png";
 import gitIcon from "/icons/git.png";
 import reactIcon from "/icons/react.png";
-import CardProject from "./components/CardProject.jsx";
+import minecraftHeart from "../public/heart.png";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -48,11 +47,7 @@ function App() {
 
   const learningIcons = [{ src: reactIcon, name: "React" }];
 
-  const items = [
-    { id: 1, title: "Project 1", subtitle: "Subtitle 1" },
-    { id: 2, title: "Project 2", subtitle: "Subtitle 2" },
-    { id: 3, title: "Project 3", subtitle: "Subtitle 3" },
-  ];
+
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -63,8 +58,11 @@ function App() {
       <div className="relative min-h-screen">
         <div className="absolute inset-0 -z-10 min-h-screen w-full items-center px-5 py-24 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
         {/* <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> */}
-        <nav className="fixed top-0 left-0 flex flex-wrap justify-between items-center p-4 text-white w-full">
-          <div>{/* Logo o título */}</div>
+        <nav className="fixed top-0 left-0 flex flex-wrap justify-between items-center p-4 text-white w-full z-50 backdrop-blur-sm">
+          <div className="flex gap-3 justify-center items-center">{/* Logo o título */}
+            <img src={minecraftHeart} alt="" className="size-5" />
+            <p className="text-2xl font-semibold">LFLC</p>
+          </div>
 
           <div className="md:hidden mb-2">
             <button onClick={toggleMenu} className="buttonM">
@@ -89,12 +87,12 @@ function App() {
             >
               Mi trabajo
             </a>
-            <a
+            {/* <a
               href="#contactame"
               className="hover:scale-105 transition duration-300 hover:text-gray-400"
             >
               Contactame
-            </a>
+            </a> */}
           </div>
         </nav>
 
@@ -142,7 +140,7 @@ function App() {
               <Technologies
                 title="Back-End"
                 icons={backEndIcons}
-                reverse={true}
+                reverse={false}
               />
               <Technologies
                 title="Herramientas"
@@ -152,7 +150,7 @@ function App() {
               <Technologies
                 title="Aprendiendo"
                 icons={learningIcons}
-                reverse={true}
+                reverse={false}
               />
             </div>
           </div>
@@ -167,7 +165,7 @@ function App() {
             Mis proyectos
           </p>
 
-          <CardProject items={items} />
+          <Projects />
         </section>
 
         {/* Sección: Contactame */}
