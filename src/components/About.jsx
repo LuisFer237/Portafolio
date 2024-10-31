@@ -2,10 +2,25 @@
 import React, { useState } from "react";
 import profilephoto from "/foto.jpg";
 import linkedinSvg from "../assets/linkedin.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const About = () => {
-  const [isHoveredGitHub, setIsHoveredGitHub] = useState(false);
-  const [isHoveredLinkedIn, setIsHoveredLinkedIn] = useState(false);
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      toast.success("Correo copiado!", {
+        position: "bottom-center",
+        theme: "dark",
+      });
+    }).catch(err => {
+      toast.error("Error al copiar el correo", {
+        position: "top-center"
+      });
+    });
+  };
 
   return (
     <section className="text-white">
@@ -23,6 +38,7 @@ const About = () => {
         </p>
 
         <div className="flex justify-around items-center gap-5">
+          {/* Github */}
           <a
             href="https://github.com/LuisFer237"
             target="_blank"
@@ -39,7 +55,7 @@ const About = () => {
               <span className="ml-1 text-white"></span>
             </div>
           </a>
-
+          {/* Linkedin */}
           <a
             href="https://www.linkedin.com/in/luis-fernando-leal-contreras-4b5a9a2b1/"
             target="_blank"
@@ -55,8 +71,20 @@ const About = () => {
               <span className="ml-1 text-white"></span>
             </div>
           </a>
+          {/* Correo */}
+          <button onClick={() => copyToClipboard('luisferlc.dev@gmail.com')}
+            className="mt-3 z-50 flex overflow-hidden items-center text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-slate-500 text-white shadow hover:bg-slate-600 h-9 px-4 py-2 max-w-52 whitespace-pre md:flex group relative w-full justify-center gap-2 rounded-md transition-all duration-300 ease-out hover:ring-2 hover:ring-[#005582] hover:ring-offset-2"
+          >
+            <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40"></span>
+            <div className="flex justify-center items-center ms-1">
+              <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 fill-current" />
+              <span className="ml-1 text-white"></span>
+            </div>
+          </button>
         </div>
       </div>
+
+      <ToastContainer />
     </section>
   );
 };

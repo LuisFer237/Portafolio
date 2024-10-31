@@ -14,7 +14,7 @@ const CardProject = ({ items }) => {
             <motion.div
               key={item.id}
               layoutId={item.id}
-              className="p-7 bg-gray-800 text-white rounded-md flex justify-center items-center hover:bg-gray-900 transition-colors duration-300"
+              className="p-7 bg-stone-900 text-white rounded-md flex justify-center items-center hover:bg-stone-800 transition-colors duration-300"
             >
               <motion.div className="w-1/2 flex flex-col h-full pb-5 px-5">
                 <div className="flex-grow space-y-2">
@@ -52,7 +52,7 @@ const CardProject = ({ items }) => {
           >
             <motion.div
               layoutId={selectedId}
-              className="bg-gray-800 p-8 rounded-md md:w-3/4 mx-3 text-white relative"
+              className="bg-stone-900 p-8 rounded-md md:w-3/4 mx-3 text-white relative"
             >
               <motion.button
                 onClick={() => setSelectedId(null)}

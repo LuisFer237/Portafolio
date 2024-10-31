@@ -21,6 +21,7 @@ import htmlIcon from "/icons/html.png";
 import gitIcon from "/icons/git.png";
 import reactIcon from "/icons/react.png";
 import minecraftHeart from "../public/heart.png";
+import { img } from "framer-motion/client";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -43,11 +44,24 @@ function App() {
     { src: phpIcon, name: "PHP" },
     { src: postgresqlIcon, name: "PostgreSQL" },
   ];
+
+  const tech = [
+    { src: tailwindIcon, name: "Tailwind CSS" },
+    { src: cssIcon, name: "CSS" },
+    { src: figmaIcon, name: "Figma" },
+    { src: livewireIcon, name: "Livewire" },
+    { src: htmlIcon, name: "HTML" },
+    { src: laravelIcon, name: "Laravel" },
+    { src: mysqlIcon, name: "MySQL" },
+    { src: phpIcon, name: "PHP" },
+    { src: postgresqlIcon, name: "PostgreSQL" },
+    { src: gitIcon, name: "Git" },
+    { src: reactIcon, name: "React" },
+  ];
+
   const toolIcons = [{ src: gitIcon, name: "Git" }];
 
   const learningIcons = [{ src: reactIcon, name: "React" }];
-
-
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -59,7 +73,8 @@ function App() {
         <div className="absolute inset-0 -z-10 min-h-screen w-full items-center px-5 py-24 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
         {/* <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> */}
         <nav className="fixed top-0 left-0 flex flex-wrap justify-between items-center p-4 text-white w-full z-50">
-          <div className="flex gap-3 justify-center items-center">{/* Logo o título */}
+          <div className="flex gap-3 justify-center items-center">
+            {/* Logo o título */}
             <img src={minecraftHeart} alt="" className="size-5" />
             <p className="text-2xl font-semibold">LFLC</p>
           </div>
@@ -85,7 +100,7 @@ function App() {
               href="#mi-trabajo"
               className="hover:scale-105 transition duration-300 hover:text-gray-400"
             >
-              Mi trabajo
+              Proyectos
             </a>
             {/* <a
               href="#contactame"
@@ -124,42 +139,38 @@ function App() {
             </div>
 
             {/* Mis conocimientos */}
-            <div className="p-10 z-50 w-full">
+            <div className="p-10 z-50 w-full mb-10">
               <p
-                className="text-white text-3xl font-semibold mb-5 text-center"
+                className="text-white text-3xl font-semibold mb-10 text-center"
                 data-aos="flip-left"
               >
                 Mis conocimientos
               </p>
 
-              <Technologies
-                title="Front-End"
-                icons={frontEndIcons}
-                reverse={false}
-              />
-              <Technologies
-                title="Back-End"
-                icons={backEndIcons}
-                reverse={false}
-              />
-              <Technologies
-                title="Herramientas"
-                icons={toolIcons}
-                reverse={false}
-              />
-              <Technologies
-                title="Aprendiendo"
-                icons={learningIcons}
-                reverse={false}
-              />
+              <div className="slider">
+                <div className="slide-track">
+                  {tech.map((item) => (
+                    <div key={item.name} className="slide">
+                      <div className="slide-content flex flex-col justify-center items-center">
+                        <img
+                          src={item.src}
+                          alt={item.name}
+                          className="h-20 w-auto object-cover mb-3"
+                        />
+                        <p>{item.name}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Sección: Mi trabajo */}
-        <section id="mi-trabajo" className="px-4 md:px-16 mx-auto">
+        <section id="mi-trabajo" className="px-4 md:px-16 mx-auto pt-10">
           <p
-            className="text-white text-3xl font-semibold mb-10 text-center"
+            className="text-white text-3xl font-semibold mb-10 mt-5 text-center"
             data-aos="flip-left"
           >
             Mis proyectos
