@@ -447,7 +447,8 @@ body {
   margin: auto;
   overflow: hidden;
   position: relative;
-  width: 960px;
+  width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  max-width: 960px; /* Ancho máximo */
   color: #fff;
   padding: 20px 0; /* Añade un poco de padding para asegurar que el contenido no se corte */
 }
@@ -497,4 +498,33 @@ body {
   height: 100%;
   width: 100%;
   background: transparent;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .slide {
+    width: 200px; /* Ajusta el ancho de las slides en pantallas más pequeñas */
+  }
+
+  .slide-track {
+    width: calc(200px * 14); /* Ajusta el ancho del track según el nuevo ancho de las slides */
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    width: 150px; /* Ajusta el ancho de las slides en pantallas muy pequeñas */
+  }
+
+  .slide-track {
+    width: calc(150px * 14); /* Ajusta el ancho del track según el nuevo ancho de las slides */
+  }
+
+  .slide-content img {
+    height: 40px; /* Ajusta la altura de las imágenes en pantallas muy pequeñas */
+  }
+
+  .slide-content p {
+    font-size: 14px; /* Ajusta el tamaño del texto en pantallas muy pequeñas */
+  }
 }

@@ -21,7 +21,8 @@ import htmlIcon from "/icons/html.png";
 import gitIcon from "/icons/git.png";
 import reactIcon from "/icons/react.png";
 import minecraftHeart from "../public/heart.png";
-import { img } from "framer-motion/client";
+
+import viaticosImage from "../public/img/viaticos.png";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -29,21 +30,6 @@ function App() {
   useEffect(() => {
     AOS.init({});
   }, []);
-
-  const frontEndIcons = [
-    { src: tailwindIcon, name: "Tailwind CSS" },
-    { src: cssIcon, name: "CSS" },
-    { src: figmaIcon, name: "Figma" },
-    { src: livewireIcon, name: "Livewire" },
-    { src: htmlIcon, name: "HTML" },
-  ];
-
-  const backEndIcons = [
-    { src: laravelIcon, name: "Laravel" },
-    { src: mysqlIcon, name: "MySQL" },
-    { src: phpIcon, name: "PHP" },
-    { src: postgresqlIcon, name: "PostgreSQL" },
-  ];
 
   const tech = [
     { src: tailwindIcon, name: "Tailwind CSS" },
@@ -59,19 +45,13 @@ function App() {
     { src: reactIcon, name: "React" },
   ];
 
-  const toolIcons = [{ src: gitIcon, name: "Git" }];
-
-  const learningIcons = [{ src: reactIcon, name: "React" }];
-
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
-  // <div class="relative h-full w-full bg-slate-950"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]"></div></div>
   return (
     <>
       <div className="relative min-h-screen">
         <div className="absolute inset-0 -z-10 min-h-screen w-full items-center px-5 py-24 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-        {/* <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> */}
         <nav className="fixed top-0 left-0 flex flex-wrap justify-between items-center p-4 text-white w-full z-50">
           <div className="flex gap-3 justify-center items-center">
             {/* Logo o título */}
@@ -79,16 +59,8 @@ function App() {
             <p className="text-2xl font-semibold">LFLC</p>
           </div>
 
-          <div className="md:hidden mb-2">
-            <button onClick={toggleMenu} className="buttonM">
-              <FontAwesomeIcon icon={faBars} className="p-1" />
-            </button>
-          </div>
-
           <div
-            className={`flex flex-wrap justify-around items-center gap-5 animate__animated animate__fadeIn text-xl ${
-              showMenu ? "block" : "hidden"
-            } md:flex`}
+            className={`flex-wrap justify-around items-center gap-5 animate__animated animate__fadeIn text-xl md:flex hidden`}
           >
             <a
               href="#sobre-mi"
@@ -127,7 +99,7 @@ function App() {
                 Sobre mi
               </p>
               <p
-                className="text-white text-lg font-light text-justify"
+                className="text-white text-lg font-light text-justify h-40"
                 data-aos="fade-up"
               >
                 Soy un desarrollador web apasionado por la tecnología y la
@@ -168,7 +140,7 @@ function App() {
         </section>
 
         {/* Sección: Mi trabajo */}
-        <section id="mi-trabajo" className="px-4 md:px-16 mx-auto pt-10">
+        <section id="mi-trabajo" className="px-4 md:px-16 mx-auto pt-10 pb-5">
           <p
             className="text-white text-3xl font-semibold mb-10 mt-5 text-center"
             data-aos="flip-left"
@@ -177,41 +149,8 @@ function App() {
           </p>
 
           <Projects />
+
         </section>
-
-        {/* Sección: Contactame */}
-        {/* <section id="contactame" className='px-4 md:px-16'>
-          
-          <div className='flex flex-col items-center'>
-            <div className='w-full md:w-1/2 p-5'>
-              <p className='text-white text-3xl font-semibold mb-5 text-center' data-aos="flip-right">Contactame</p>
-              <form className='flex flex-col gap-4'>
-                <input 
-                  type="text" 
-                  placeholder="Nombre" 
-                  className='p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
-                />
-                <input 
-                  type="email" 
-                  placeholder="Correo Electrónico" 
-                  className='p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
-                />
-                <textarea 
-                  placeholder="Mensaje" 
-                  className='p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
-                  rows="5"
-                />
-                <button 
-                  type="submit" 
-                  className='p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300'
-                >
-                  <FontAwesomeIcon icon={faPaperPlane} className='me-2' /> Enviar
-                </button>
-              </form>
-            </div>
-          </div>
-
-        </section> */}
       </div>
     </>
   );

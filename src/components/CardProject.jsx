@@ -14,29 +14,29 @@ const CardProject = ({ items }) => {
             <motion.div
               key={item.id}
               layoutId={item.id}
-              className="p-7 bg-stone-900 text-white rounded-md flex justify-center items-center hover:bg-stone-800 transition-colors duration-300"
+              className="p-8 bg-stone-900 text-white rounded-lg flex flex-col md:flex-row justify-around items-start md:h-80 hover:bg-stone-800 transition-colors duration-300"
             >
-              <motion.div className="w-1/2 flex flex-col h-full pb-5 px-5">
-                <div className="flex-grow space-y-2">
-                  <motion.h2 className="text-2xl font-semibold text-cyan-500">
-                    {item.title}
-                  </motion.h2>
-                  <motion.h5>{item.shortDes}</motion.h5>
-                </div>
+              <div className="w-full md:w-1/2 mb-5 md:mb-0 me-0 md:me-3">
+                <p className="text-2xl font-semibold text-cyan-500 mb-5">
+                  {item.title}
+                </p>
+                <p className="text-white overflow-y-auto h-32">
+                  {item.shortDes}
+                </p>
                 <motion.button
                   onClick={() => setSelectedId(item.id)}
-                  className="underline underline-offset-2 font-semibold hover:text-gray-400 transition duration-300 self-end absolute bottom-0 mb-10 text-lg"
+                  className="underline underline-offset-2 font-semibold hover:text-gray-400 transition duration-300 mt-5 text-lg"
                 >
                   Ver más
                 </motion.button>
-              </motion.div>
-              <motion.div className="w-1/2">
+              </div>
+              <div className="w-full md:w-1/2 flex items-center">
                 <img
-                  className="rounded-lg h-72 w-full object-cover"
                   src={item.image}
                   alt=""
+                  className="h-[16rem] rounded-lg object-cover w-full md:w-auto"
                 />
-              </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -48,22 +48,22 @@ const CardProject = ({ items }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 "
+            className="fixed inset-0 flex items-center justify-center flex-wrap bg-black bg-opacity-50 z-50"
           >
             <motion.div
               layoutId={selectedId}
-              className="bg-stone-900 p-8 rounded-md md:w-3/4 mx-3 text-white relative"
+              className="bg-stone-900 p-8 rounded-md md:w-3/4 h-2/3 text-white relative"
             >
               <motion.button
                 onClick={() => setSelectedId(null)}
-                className="absolute top-3 right-3 bg-gray-600 text-white rounded-full p-2 size-9 flex justify-center items-center
+                className="absolute top-3 right-3 bg-gray-600 text-white rounded-full p-2 size-7 flex justify-center items-center
                       hover:bg-gray-700 transition duration-300 hover:text-gray-300"
               >
                 <FontAwesomeIcon icon={faX} className="" />
               </motion.button>
 
-              <div className="md:flex justify-between items-center">
-                <div className="flex flex-col gap-3 justify-start items-start pe-10 w-1/2">
+              <div className="md:flex justify-between items-center h-full">
+                <div className="flex flex-col gap-5 justify-start items-start pe-10 w-1/2 h-full">
                   <motion.h2 className="text-2xl text-cyan-500">
                     {items.find((item) => item.id === selectedId).title}
                   </motion.h2>
@@ -96,7 +96,7 @@ const CardProject = ({ items }) => {
                   <motion.img
                     src={items.find((item) => item.id === selectedId).image}
                     alt=""
-                    className="rounded-lg h-72 w-full object-cover"
+                    className="rounded-lg h-[23rem] w-full object-cover"
                   />
                 </div>
               </div>

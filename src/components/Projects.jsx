@@ -75,7 +75,7 @@ const postgresqlIcon = (
 const items = [
   {
     id: 1,
-    title: "Gestor de viáticos y gastos generales (CECUFID)",
+    title: "Gestor de viáticos y gastos generales",
     shortDes: `Aplicación web para gestionar viáticos y gastos generales de la Comisión Estatal de Cultura Física y Deporte del Gobierno del Estado de Michoacán.`,
     descripcion: `Plataforma en línea para la administración de viáticos y gastos generales en la Comisión Estatal de Cultura Física y Deporte del Gobierno de Michoacán. Los usuarios pueden solicitar viáticos, registrar gastos y subir documentos de respaldo. Los administradores tienen funciones de revisión, aprobación de solicitudes y generación de reportes.`,
     image: viaticosImage,
