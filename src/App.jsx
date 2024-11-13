@@ -80,7 +80,7 @@ function App() {
             </div>
 
             {/* Mis conocimientos */}
-            <div className="p-10 z-50 w-full mb-10">
+            <div className="p-10 z-50 w-full mb-10 mt-5 md:mt-0">
               <p
                 className="text-white text-3xl font-semibold mb-10 text-center"
                 data-aos="flip-left"
