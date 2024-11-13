@@ -52,7 +52,7 @@ const CardProject = ({ items }) => {
           >
             <motion.div
               layoutId={selectedId}
-              className="bg-stone-900 p-8 rounded-md md:w-3/4 h-2/3 text-white relative"
+              className="bg-stone-900 p-8 rounded-md md:w-3/4 md:h-2/3 mx-2 my-5 text-white relative"
             >
               <motion.button
                 onClick={() => setSelectedId(null)}
@@ -63,7 +63,7 @@ const CardProject = ({ items }) => {
               </motion.button>
 
               <div className="md:flex justify-between items-center h-full">
-                <div className="flex flex-col gap-5 justify-start items-start pe-10 w-1/2 h-full">
+                <div className="flex flex-col gap-5 justify-start items-start md:pe-10 md:w-1/2 h-full">
                   <motion.h2 className="text-2xl text-cyan-500">
                     {items.find((item) => item.id === selectedId).title}
                   </motion.h2>
@@ -79,25 +79,38 @@ const CardProject = ({ items }) => {
                       ))}
                   </div>
 
-                  <motion.h5>
+                  <motion.h5 className="h-32 md:h-auto overflow-y-auto md:overflow-y-hidden">
                     {items.find((item) => item.id === selectedId).descripcion}
                   </motion.h5>
 
                   <a
                     href={items.find((item) => item.id === selectedId).link}
                     target="_blank"
-                    className="text-white py-2 px-4 rounded-lg bg-blue-500 hover:bg-blue-600 transition duration-300 self-end"
+                    className="hidden md:block text-white py-2 px-4 rounded-lg bg-blue-500 hover:bg-blue-600 transition duration-300 self-end"
                   >
                     <FontAwesomeIcon icon={faLocationArrow} className="pe-2" />{" "}
                     Visitar
                   </a>
                 </div>
-                <div>
+                <div className="mt-5 md:mt-0">
                   <motion.img
                     src={items.find((item) => item.id === selectedId).image}
                     alt=""
                     className="rounded-lg h-[23rem] w-full object-cover"
                   />
+                  <div className="flex justify-center items-center mt-3">
+                    <a
+                      href={items.find((item) => item.id === selectedId).link}
+                      target="_blank"
+                      className="md:hidden block text-white py-2 px-4 rounded-lg bg-blue-500 hover:bg-blue-600 transition duration-300 self-end"
+                    >
+                      <FontAwesomeIcon
+                        icon={faLocationArrow}
+                        className="pe-2"
+                      />{" "}
+                      Visitar
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
