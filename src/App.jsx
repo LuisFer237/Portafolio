@@ -1,28 +1,11 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane, faBars } from "@fortawesome/free-solid-svg-icons";
 import About from "./components/About";
 import Technologies from "./components/Technologies";
 import Projects from "./components/Projects";
-
-import tailwindIcon from "/icons/tailwind.png";
-import cssIcon from "/icons/css.png";
-import figmaIcon from "/icons/figma.png";
-import laravelIcon from "/icons/laravel.png";
-import mysqlIcon from "/icons/mysql.png";
-import phpIcon from "/icons/php.png";
-import postgresqlIcon from "/icons/postgresql.png";
-import livewireIcon from "/icons/livewire.png";
-import htmlIcon from "/icons/html.png";
-import gitIcon from "/icons/git.png";
-import reactIcon from "/icons/react.png";
 import minecraftHeart from "../public/heart.png";
-
-import viaticosImage from "../public/img/viaticos.png";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -30,20 +13,6 @@ function App() {
   useEffect(() => {
     AOS.init({});
   }, []);
-
-  const tech = [
-    { src: tailwindIcon, name: "Tailwind CSS" },
-    { src: cssIcon, name: "CSS" },
-    { src: figmaIcon, name: "Figma" },
-    { src: livewireIcon, name: "Livewire" },
-    { src: htmlIcon, name: "HTML" },
-    { src: laravelIcon, name: "Laravel" },
-    { src: mysqlIcon, name: "MySQL" },
-    { src: phpIcon, name: "PHP" },
-    { src: postgresqlIcon, name: "PostgreSQL" },
-    { src: gitIcon, name: "Git" },
-    { src: reactIcon, name: "React" },
-  ];
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -118,23 +87,8 @@ function App() {
               >
                 Mis conocimientos
               </p>
-
-              <div className="slider">
-                <div className="slide-track">
-                  {tech.map((item) => (
-                    <div key={item.name} className="slide">
-                      <div className="slide-content flex flex-col justify-center items-center">
-                        <img
-                          src={item.src}
-                          alt={item.name}
-                          className="h-20 w-auto object-cover mb-3"
-                        />
-                        <p>{item.name}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              
+              <Technologies />
             </div>
           </div>
         </section>
@@ -149,7 +103,6 @@ function App() {
           </p>
 
           <Projects />
-
         </section>
       </div>
     </>

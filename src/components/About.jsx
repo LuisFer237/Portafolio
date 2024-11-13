@@ -12,7 +12,7 @@ const About = () => {
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
       toast.success("Correo copiado!", {
-        position: "bottom-center",
+        position: "top-right",
         theme: "dark",
       });
     }).catch(err => {
